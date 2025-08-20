@@ -11,8 +11,14 @@ products = [
     {'id': 144, 'name': 'Black Marker', 'price': 1.99}
 ]
 
-#
-#Add all the REST API end-points here
-#
+@app.route("/products", method="["GET"])
+def get_products():
+    id = int(id)
+    product = [x for x in products if x["id"] == id][0]
+    return jsonify(products)
+
+
+
+
 
 app.run(port=5000,debug=True)
